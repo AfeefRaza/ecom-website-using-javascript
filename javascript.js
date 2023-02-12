@@ -1,11 +1,9 @@
+import items from './items.json' assert { type: 'JSON' };
+import categories from './categories.json' assert { type: 'JSON' };
 
-let categories = fetch("/categories.json")
-categories.then((category)=>{
-    return category.json()
-}).then((category2) => {
-    console.log(category2)
 
-    document.getElementById('cat').innerHTML = category2.map(cat => 
+
+    document.getElementById('cat').innerHTML = categories.map(cat => 
         `
         <a href="/category.html">
         <div  class="cat">
@@ -21,20 +19,8 @@ categories.then((category)=>{
 
     ).join('')
 
-    //    let cat =  category2.map((value)=>{
-//         let c = value
-        
-//     document.getElementById("cat").innerHTML = c.name ;
-//     console.log(c.name)
-// })
-})
-let items = fetch("/items.json")
-items.then((item)=>{
-    return item.json()
-}).then((item2) => {
-    console.log(item2)
 
-    document.getElementById('items').innerHTML = item2.map(I => 
+    document.getElementById('items').innerHTML = items.map(I => 
         `<div class="item">
         <img src=${I.image} alt="">
 
@@ -51,5 +37,5 @@ items.then((item)=>{
         </div>`
     ).join('')
 
-})
+
 
