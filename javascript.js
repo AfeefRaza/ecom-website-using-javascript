@@ -1,3 +1,4 @@
+
 let categories = fetch("/categories.json")
 categories.then((category)=>{
     return category.json()
@@ -5,12 +6,19 @@ categories.then((category)=>{
     console.log(category2)
 
     document.getElementById('cat').innerHTML = category2.map(cat => 
-        `<div class="cat">
+        `
+        <a href="/category.html">
+        <div  class="cat">
+          
           <h1>${cat.name}</h1>
           <div class="image">
           <img src=${cat.image} alt="">
           </div>
-        </div>`
+          
+        </div>
+        </a>
+        `
+
     ).join('')
 
     //    let cat =  category2.map((value)=>{
@@ -44,21 +52,4 @@ items.then((item)=>{
     ).join('')
 
 })
-function renderProductPage(product) {
-    document.getElementById('items').innerHTML = `
-      <h1>${product.name}</h1>
-      <p>${product.description}</p>
-      <p>Price: $${product.price}</p>
-    `;
-  }
 
-  document.getElementById('pro').addEventListener('click', event => {
-    const target = event.target;
-    if (target.classList.contains('product')) {
-      const productId = target.getAttribute('data-product-id');
-      const product = products.find(product => product.id == productId);
-      renderProductPage(product);
-    }
-  });
-
-  renderProducts(products);

@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
 }
+body{
+    background-color: var(--primary);
+}
 :root {
     --primary : #E4F9F5;
     --secondary : #30E3CA;
@@ -144,7 +147,8 @@
     background-color: var(--primary);
 }
 main{
-    background-color: var(--primary);
+    
+    margin-bottom: 2vh;
 }
 .categories{
     width: 100vw;
@@ -153,12 +157,16 @@ main{
     color: var(--fourth);
 
 }
+.categories a{
+    text-decoration: none;
+}
 .heading{
     margin-left: 1vw;
     font-size: 2vw;
     margin-bottom: 5vh;
 }
 .category{
+   
     display: flex;
     justify-content: space-around;
    
@@ -262,4 +270,59 @@ main{
 }
 .star{
     color: orange;
+}
+.hr{
+    border-top: 2px solid black;
+}
+.Bottom{
+    background-color: var(--primary);
+    width: 100vw;
+    height: auto;
+}
+.row-1{
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 3vh;
+}
+.row-1 h4{
+    font-family: 'Unbounded', cursive;
+    font-weight: 700;
+}
+
+.column{
+    margin: 0 3vw;
+    display: flex;
+    flex-direction: column;
+   
+}
+.column a{
+    text-decoration: none;
+    color: var(--fourth);
+   
+}
+.Bottom p{
+    font-size: 1rem;
+    font-family: 'Unbounded', cursive;
+    font-weight: 300;
+    /* margin-left: 2vw; */
+    margin-bottom: 0;
+    cursor: pointer;
+    
+}
+@media (max-width:800px)  {
+
+    .row-1{
+        display: block;
+    }
+    .Bottom{
+        width: 100%;
+        height: auto;
+    }
+    .Bottom p{
+        font-size: 0.6rem;
+        
+        
+    }
 }
