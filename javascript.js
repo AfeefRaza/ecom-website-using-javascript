@@ -1,11 +1,10 @@
-import items from './items.json' assert { type: 'JSON' };
-import categories from './categories.json' assert { type: 'JSON' };
 
+import categories from "./categories.js"
+let category = categories
 
-
-    document.getElementById('cat').innerHTML = categories.map(cat => 
+    document.getElementById('cat').innerHTML = category.map(cat => 
         `
-        <a href="/category.html">
+        <a href="/${cat.name}.html">
         <div  class="cat">
           
           <h1>${cat.name}</h1>
@@ -19,7 +18,8 @@ import categories from './categories.json' assert { type: 'JSON' };
 
     ).join('')
 
-
+import Allproducts from "./items.js"
+let items = Allproducts
     document.getElementById('items').innerHTML = items.map(I => 
         `<div class="item">
         <img src=${I.image} alt="">
@@ -38,4 +38,6 @@ import categories from './categories.json' assert { type: 'JSON' };
     ).join('')
 
 
-
+// import afeef from "./items"
+// let afeef1 = afeef
+// console.log(afeef1)
