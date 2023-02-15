@@ -11,6 +11,7 @@ body{
     --third : #11999E;
     --fourth : #40514E;
 }
+
 .Navbar{
     display: flex;
     color: var(--fourth);
@@ -98,6 +99,48 @@ body{
     display: flex;
     justify-content: space-around;
 }
+
+.cartmenu{
+    position: fixed;
+    background-color: var(--primary);
+    /* width: 0vw; */
+    height: 100vh;
+    width: 0;
+    z-index: 2;
+    right: 0;
+    top: 0;
+}
+.show{
+    width: 25vw;
+}
+.topcart{
+    display: flex;
+    
+    align-items: center;
+    background-color: var(--fourth);
+    height: 8vh;
+    
+}
+.topcart h3{
+    margin-left: 0.5vw;
+    font-size: 1.5vw;
+}
+
+.leftarr{
+    margin-left: 1vw;
+    color: var(--primary);
+    font-size: 1.5vw;
+}
+.topcart h3 a{
+    text-decoration: none;
+    color: var(--primary);
+}
+.middlecart{
+    display: flex;
+    justify-content: center;
+    background-color: var(--secondary);
+    height: 60vh;
+}
 .banner{
     width: 100vw;
     height: 50vh;
@@ -174,6 +217,7 @@ main{
     
 }
 .cat{
+    filter: drop-shadow(0 0 0.2rem var(--fourth));
     width: 17vw;
     height: 40vh;
     cursor: pointer;
@@ -216,6 +260,7 @@ main{
     color: var(--fourth);
 }
 .foryouitems{
+    
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -240,6 +285,7 @@ main{
     color: var(--third);
 }
 .item img{
+    filter: drop-shadow(0 0 0.2rem var(--fourth));
     width: 20vw;
     height: 15vw;
     border-radius: 1rem;
