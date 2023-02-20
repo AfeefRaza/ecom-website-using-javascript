@@ -32,13 +32,15 @@
       // Display all products on the index page
       items = Allproducts;
     }
-    
+    const itemsElement = document.getElementById('items');
+
     // Display the items in the HTML
+    if (itemsElement) {
     document.getElementById('items').innerHTML = items.map(I => 
       `<div class="item">
         <img src=${I.image} alt="">
         <span>
-          <a href="/product.html">
+          <a href="/">
             <h1>${I.title}</h1>
             <h1> $ ${I.price}</h1>
           </a>
@@ -47,29 +49,31 @@
         <p> ${I.rating.rate} <i class="fa-solid fa-star star"></i> (${I.rating.count})</p>
         <a  data-id=${I.id} data-img = ${I.image} data-qty = ${I.qty} data-name="${I.title}" data-price=${I.price} class="btn add-to-cart"> Add to Cart</a>
       </div>`
-    ).join('');
+    ).join('');}
 
 
 
 // Show and hide cartmenu function
 const myDiv = document.getElementById("cartmenu");
 const myButton = document.getElementById("cartbtn");
-
+if (myButton) {
 myButton.addEventListener("click", () => {
   if (myDiv.style.display === "none") {
     myDiv.style.display = "block";
   } else {
     myDiv.style.display = "none";
   }
-});
+});}
 //Hide cartmenu when you click continue shopping
 const continueshopping = document.getElementById("conshop");
+if (continueshopping) {
 continueshopping.addEventListener("click", () => {
   if (myDiv.style.display === "block") {
     myDiv.style.display = "none";
   }
-});
+});}
 //Hide cartmenu when you click outside the cartmenu
+if (continueshopping) {
 function hideOnOutsideClick(element, excludedElement) {
   document.addEventListener("click", (event) => {
     if (!element.contains(event.target) && !excludedElement.contains(event.target)) {
@@ -77,8 +81,10 @@ function hideOnOutsideClick(element, excludedElement) {
     }
   });
 }
-
 hideOnOutsideClick(myDiv, myButton);
+}
+
+
     
 
 
@@ -89,6 +95,104 @@ const addToCartButtons = document.querySelectorAll('.add-to-cart');
 if (!localStorage.getItem('cart')) {
   localStorage.setItem('cart', JSON.stringify([]));
 }
+if (!localStorage.getItem('history')) {
+  localStorage.setItem('history', JSON.stringify([]));
+}
+// sign in function
+const signinBtn = document.getElementById("signinbtn");
+
+console.log("reach")
+if (signinBtn) {
+signinBtn.addEventListener( 'click', () => {
+  
+  const username = document.getElementById("name").value;
+  const useremail = document.getElementById("email").value;
+  const userpass = document.getElementById("password").value;
+  function containsAtSymbol(str) {
+    if (str.indexOf("@") === -1) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+  function isPasswordValid(password) {
+    if (password.length >= 8) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+    // Check if the data is already in local storage
+if (localStorage.getItem('email') && localStorage.getItem('password')) {
+  
+  
+
+function ClearHtml() {
+  document.getElementById('warning').innerHTML = ``
+}
+document.getElementById('warning').innerHTML = `<i class="fa-solid fa-triangle-exclamation" style="color: red;"></i>
+<p> You are already logged in</p>`
+setTimeout(ClearHtml, 3000)
+  
+} else if (!containsAtSymbol(useremail)){
+  function ClearHtml() {
+    document.getElementById('warning').innerHTML = ``
+  }
+  document.getElementById('warning').innerHTML = `<i class="fa-solid fa-triangle-exclamation" style="color: red;"></i>
+  <p> This email is invalid</p>`
+  setTimeout(ClearHtml, 3000)
+}
+else if(!isPasswordValid(userpass)) {
+  function ClearHtml() {
+    document.getElementById('warning').innerHTML = ``
+  }
+  document.getElementById('warning').innerHTML = `<i class="fa-solid fa-triangle-exclamation" style="color: red;"></i>
+  <p> Password must be 8 characters long</p>`
+  setTimeout(ClearHtml, 3000)
+}
+else{
+  localStorage.setItem('email', useremail);
+  localStorage.setItem('username', username);
+  localStorage.setItem('password', userpass);
+  
+  window.location.href = "/"
+}
+
+   
+} )}
+
+console.log('afeef')
+if ("password" in localStorage) {
+  document.getElementById("account").innerHTML = localStorage.getItem('username')
+}else{
+  document.getElementById("account").innerHTML = `<i class="fa-regular fa-user"></i>
+  <a href="./signup.html">Account</a>`
+}
+
+const popup = document.getElementById("popup");
+popup.style.display = "none";
+const accountbtn = document.getElementById("account");
+
+
+accountbtn.addEventListener("click", () => {
+  if (popup.style.display === "none") {
+    popup.style.display = "flex";
+  } 
+});
+const yespopup = document.getElementById("yes-popup");
+const nopopup = document.getElementById("no-popup");
+nopopup.addEventListener('click', () => {
+  console.log('no')
+  popup.style.display = "none";
+})
+yespopup.addEventListener('click', () => {
+  localStorage.removeItem('email');
+  localStorage.removeItem('password');
+  localStorage.removeItem('username');
+  popup.style.display = "none";
+
+})
+
 
 // Add event listener to each button
 addToCartButtons.forEach(button => {
@@ -137,7 +241,37 @@ addToCartButtons.forEach(button => {
 
 
 });
+const date = new Date();
 
+let day = date.getDate();
+let month = date.getMonth() + 1;
+let year = date.getFullYear();
+
+// This arrangement can be altered based on how we want the date's format to appear.
+let currentDate = `${day}-${month}-${year}`;
+
+  
+    const checkout = document.getElementById('checkout')
+
+      checkout.addEventListener("click", () => {
+        console.log("1")
+        const p = document.getElementById('final-price').innerText
+        console.log("2")
+        const historyEntry = { Finalprice: p, date: currentDate };
+        console.log("3")
+        history.push(historyEntry)
+        console.log("4")
+        localStorage.setItem('history', JSON.stringify(history));
+        console.log("4")
+        
+        // localStorage.removeItem("cart");
+      })
+      const history = JSON.parse(localStorage.getItem('history'));
+history.forEach(orders => {
+  console.log("5")
+  console.log(orders.Finalprice)
+  document.getElementById('p').innerHTML = `${orders.Finalprice}`
+});
 
 // Function to update cart items on the page
 function updateCartItems() {
@@ -146,41 +280,138 @@ function updateCartItems() {
 
   // Get the cart data from local storage
   const cart = JSON.parse(localStorage.getItem('cart'));
- console.log(cart)
+ 
   // Clear existing cart items on the page
   cartItemsElement.innerHTML = '';
 
   // Loop through each item in the cart and display it
+ 
+  
   cart.forEach(item => {
-    
+   
+    let qty = item.qty;
+    //updating price according to qty
+    let price = item.price*qty;
     const li = document.createElement('div');
-    let price = item.price*item.qty
+
     li.innerHTML = `<img src=${item.img} alt=""> 
     <div>
     <h1>${item.name}</h1>
     <h2>$${price}</h2>
     <div  > 
-    qty: ${item.qty}
-    <button data-qty = ${item.qty} id="addbtn" class="addbtn">+</button>
+     <p class="qty"> qty: ${qty} </p> 
+    <button id="addbtn" class="addbtn">+</button>
+    <button id="minusbtn" class="minusbtn">-</button>
     </div>
     </div>
     `;
+   
     
+    function Totalprice() {
+      let totalPrice = 0;
+      cart.forEach(item => {
+        let qty = item.qty;
+        let price = item.price * qty;
+        totalPrice += price;
+      });
+      const totalPriceElement = document.getElementById('total-price');
+      const Shipprice = document.getElementById('ship-price');
+      const Finalprice = document.getElementById('final-price');
+      var ship;
+      totalPriceElement.innerHTML = `$${totalPrice.toFixed(2)}`;
+      if (totalPrice <= 50 ) {
+        Shipprice.innerHTML = `$25`;
+        ship = 25 
+      } else {
+        Shipprice.innerHTML = `FREE`;
+        ship = 0
+      }
+      Finalprice.innerHTML = `$${totalPrice.toFixed(2) + ship}`;
+      
+      
+      
+    }
+    
+
+    Totalprice()
+    
+    
+
     cartItemsElement.appendChild(li);
+    const addBtn = li.querySelector('.addbtn');
+    addBtn.addEventListener('click', () => {
+      console.log(qty);
+      //updating value of qty
+      qty++;
+      price = item.price * qty;
+      //updating new data in div
+      li.querySelector('h2').textContent = `$${price}`;
+      li.querySelector('.qty').textContent = `qty: ${qty}`;
+      item.qty = qty;
+      
+      //updating value of qty in local storage
+      localStorage.setItem('cart', JSON.stringify(cart));
+      Totalprice()
+    });
+    
+    
+   
+    const minusBtn = li.querySelector('.minusbtn');
+    minusBtn.addEventListener('click', () => {
+      //updating value of qty
+      qty--;
+      
+      price = item.price * qty;
+      //updating new data in div
+      li.querySelector('h2').textContent = `$${price}`;
+      li.querySelector('.qty').textContent = `qty: ${qty}`;
+      item.qty = qty;
+      
+      //updating value of qty in local storage
+      localStorage.setItem('cart', JSON.stringify(cart));
+      //when vlaue of qty becomes zero that item will be removed automatically from the cart and local storage
+      if (qty === 0) {
+        //finding which is to be removed
+        const index = cart.indexOf(item);
+        cart.splice(index, 1);
+        //updating value in local storage
+        localStorage.setItem('cart', JSON.stringify(cart));
+        //removing the items
+        li.remove();
+      }
+      Totalprice()
+    });
+    
+    
+    
   });
+  const date = new Date();
+
+let day = date.getDate();
+let month = date.getMonth() + 1;
+let year = date.getFullYear();
+
+// This arrangement can be altered based on how we want the date's format to appear.
+let currentDate = `${day}-${month}-${year}`;
+
+  
+    const checkout = document.getElementById('checkout')
+      checkout.addEventListener("click", () => {
+        const p = document.getElementById('final-price').innerText
+        const historyEntry = { Finalprice: p, date: currentDate };
+        history.push(historyEntry)
+        localStorage.setItem('history', JSON.stringify(history));
+        
+        // localStorage.removeItem("cart");
+      })
 }
+
+
 
 // Call the updateCartItems function when the page is loaded
 updateCartItems();
 // const add = document.querySelectorAll('.add-to-cart');
-const addBtn = document.querySelectorAll('.addbtn');
-addBtn.forEach(button => {
-  var   productqty = button.getAttribute('data-qty');
-  button.addEventListener('click' , () => {
-    console.log(productqty)
- 
-})
-})
+
 
 const hamenu = document.getElementById("nav");
 const hamburger = document.getElementById("hamburger");
@@ -192,15 +423,15 @@ hamburger.addEventListener("click", () => {
     hamenu.style.display = "none";
   }
 });
-function hamHide(element, excludedElement) {
+function hideHam(element, excludedElement) {
   document.addEventListener("click", (event) => {
-    if (!element.contains(event.target) && !excludedElement.contains(event.target)) {
+    if ( element.style.display === "block" && !element.contains(event.target) && !excludedElement.contains(event.target)) {
       element.style.display = "none";
     }
   });
 }
 
-hamHide(hamenu, hamburger);
+hideHam(hamenu, hamburger);
 
 
 

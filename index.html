@@ -12,6 +12,8 @@
 </head>
 <body>
     <header>
+        
+
         <nav class='Navbar'>
             <div class="logo" > <a href="/"> ShopCart </a></div>
             <div class="navitem navheading" id="nav">
@@ -28,9 +30,9 @@
             </div>
             <i class="fa-solid fa-magnifying-glass scope"></i>
             <div class="right">
-            <div class="account navheading">
+            <div class="account navheading" id="account">
                 <i class="fa-regular fa-user"></i>
-                <a>Account</a>
+                <a href="./signup.html">Account</a>
                 
             </div>
             <div class="cart navheading" id="cartbtn" >
@@ -53,12 +55,26 @@
                
             </div>
             <div class="bottomcart">
+                <div> 
+                    <li> <p> PRICE: </p><span id="total-price">$0</span> </li>
+                    <li> <p>SHIPPING: </p> <span id="ship-price">$0</span> </li>
+                    <li> <p>TOTAL: </p> <span id="final-price">$0</span> </li>
                 
+                </div>
+                <button id="checkout">CHECKOUT</button>
         </div>
         
     </header>
     <main>
-        
+        <div class="popupcontainer" id="popup">
+            <div class="popup">
+                <h1>Do you want to sign out</h1>
+                <span>
+                <button id="yes-popup"> YES</button>
+                <button id="no-popup">NO</button>
+            </span>
+            </div>
+        </div>
         <div class="banner">
             <div class="banneritem">
             <h1>Special promotion</h1>
@@ -72,9 +88,11 @@
                 <a href="./electronics.html">
                     <div class="cat">
                       <h1>electronics</h1>
+                      
                       <div class="image">
                         <img src="./img/categories/electronics.png" alt="">
                       </div>
+                    
                     </div>
                   </a>
                 <a href="./jewellary.html">
@@ -114,6 +132,7 @@
         
 
     </main>
+    <div id="p"></div>
     <footer>
         <hr>
         <div class="Bottom">
