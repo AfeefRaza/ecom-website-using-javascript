@@ -286,17 +286,17 @@ body{
 .banner h1{
     color: var(--third);
     font-size: 4vw;
-    font-weight: 300;
+    font-weight: 500;
 }
 .banner h3{
     color: var(--fourth);
     font-size: 3vw;
-    font-weight: 200;
+    font-weight: 300;
 }
 .banner a{
     
     font-size: 1.5vw;
-    font-weight: 200;
+    font-weight: 300;
     text-decoration: none;
     color: var(--primary);
     background-color: var(--fourth);
@@ -776,6 +776,7 @@ text-align: center;
     }
     
     .logo {
+        
         width: 20vw;
         font-size: 0.9em;
     }
@@ -810,14 +811,16 @@ text-align: center;
     }
     .navitem{
         padding: 0;
-        padding-top: 100vh;
-        width: 50vw;
-        height: 100vh;
+        padding-right: 1vw;
+        margin-top: 30vh;
+        width: 54vw;
+        height: 23vh;
         position: fixed;
-
+        border-radius: 2rem;
        z-index: 5;  
         display: none;
         background-color: var(--secondary);
+        
         
         
         
@@ -825,11 +828,11 @@ text-align: center;
     .navitem ul{
         display: grid;
         justify-content: center;
-        
+        text-align: center;
         grid-template-columns: max-content;
         list-style: none;
-       row-gap: 3vh;
-
+       row-gap: 0;
+        margin-left: 4vw;
         /* justify-content: space-around; */
         font-size: 2em;
     

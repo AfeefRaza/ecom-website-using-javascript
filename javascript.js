@@ -459,14 +459,14 @@ const hamburger = document.getElementById("hamburger");
 
 hamburger.addEventListener("click", () => {
   if (hamenu.style.display === "none") {
-    hamenu.style.display = "block";
+    hamenu.style.display = "flex";
   } else {
     hamenu.style.display = "none";
   }
 });
 function hideHam(element, excludedElement) {
   document.addEventListener("click", (event) => {
-    if ( element.style.display === "block" && !element.contains(event.target) && !excludedElement.contains(event.target)) {
+    if ( element.style.display === "flex" && !element.contains(event.target) && !excludedElement.contains(event.target)) {
       element.style.display = "none";
     }
   });
