@@ -241,6 +241,12 @@ body{
     background-color: var(--secondary);
     cursor: pointer;
 }
+.bottomcart a {
+    margin-top: 2vh;
+    align-self: center;
+    color: var(--third);
+    font-size: 1.5vw;
+}
 .bottomcart button:hover{
     border: 2px solid var(--secondary);
     color: var(--secondary);
@@ -377,7 +383,7 @@ main{
 }
 
 .cat:hover img{
-    width: 20vw;
+    width: 17vw;
     
     margin: auto 0;
     transition: 0.3s;
@@ -409,7 +415,10 @@ main{
     /* border: 1px solid var(--secondary); */
     background-color:var(--secondary);
     border-radius: 1rem;
+   
+    
 }
+
 .item span a{
     display: flex;
     justify-content: space-between;
@@ -851,7 +860,7 @@ text-align: center;
         font-size: 3.5vw;
     }
     .middlecart{
-        height: 63vh;
+        height: 60vh;
     }
     .middlecart div img {
         border-radius: 1rem;
@@ -879,6 +888,8 @@ text-align: center;
         
         font-size: 3.5vw;
     }
+    .bottomcart {
+        height: 33vh;}
     .bottomcart div {
         height: 60%
     }
@@ -1057,8 +1068,26 @@ text-align: center;
         width: 32vw;
         font-size: 1.2em;
     }
+    
+    .order{
+        width: 90vw;
+        
+        
+    }
+    .orderheading{
+       font-size: 0.5em;
+        grid-template-columns: 15vw 15vw 15vw;
+        
+    
+    }
+    
+    .bottomcart a {
+        
+        font-size: 3vw;
+    }
 }
  @media (min-width:600px) and (max-width: 1000px) {
+    
     .Navbar{
         height: 5vh;  
         padding: 0 1vw;
@@ -1179,6 +1208,10 @@ text-align: center;
     .bottomcart button {
         height: 6vh;
         font-size: 2.5vw;
+    }
+    .bottomcart a {
+        
+        font-size: 3vw;
     }
     .banner{
         width: 100vw;
@@ -1350,6 +1383,17 @@ text-align: center;
         width: 27vw;
         font-size: 1.2em;
     }
+    .order{
+        width: 90vw;
+        
+        
+    }
+    .orderheading{
+       font-size: 0.5em;
+        grid-template-columns: 15vw 15vw 15vw;
+        
+    
+    }
 } 
 
 @media (min-width: 1000px) and (max-width: 1300px)  {
@@ -1459,6 +1503,17 @@ text-align: center;
         font-size: 1.5vw;
         width: 10vw;
         height: 5vh;
+    }
+    .order{
+        width: 90vw;
+        
+        
+    }
+    .orderheading{
+       font-size: 0.8em;
+        grid-template-columns: 15vw 15vw 15vw;
+        
+    
     }
 }
 
