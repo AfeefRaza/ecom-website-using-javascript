@@ -104,3 +104,23 @@
 // import afeef from "./items"
 // let afeef1 = afeef
 // console.log(afeef1)
+// const date = new Date();
+
+// let day = date.getDate();
+// let month = date.getMonth() + 1;
+// let year = date.getFullYear();
+
+// // This arrangement can be altered based on how we want the date's format to appear.
+// let currentDate = `${day}-${month}-${year}`;
+
+  
+//     const checkout = document.getElementById('checkout')
+//       checkout.addEventListener("click", () => {
+//         const p = document.getElementById('final-price').innerText
+//         const historyEntry = { Finalprice: p, date: currentDate };
+//         history.push(historyEntry)
+//         localStorage.setItem('history', JSON.stringify(history));
+        
+//         // localStorage.removeItem("cart");
+//       })
+// }

@@ -241,45 +241,53 @@ addToCartButtons.forEach(button => {
 
 
 });
-const date = new Date();
 
-let day = date.getDate();
-let month = date.getMonth() + 1;
-let year = date.getFullYear();
+const address = document.getElementById("address");
+address.style.display = "none";
+const adressbtn = document.getElementById("checkout");
 
-// This arrangement can be altered based on how we want the date's format to appear.
-let currentDate = `${day}-${month}-${year}`;
 
-  
-    const checkout = document.getElementById('checkout')
-
-      checkout.addEventListener("click", () => {
-        console.log("1")
-        const p = document.getElementById('final-price').innerText
-        console.log("2")
-        const historyEntry = { Finalprice: p, date: currentDate };
-        console.log("3")
-        history.push(historyEntry)
-        console.log("4")
-        localStorage.setItem('history', JSON.stringify(history));
-        console.log("4")
-        
-        // localStorage.removeItem("cart");
-      })
-      const history = JSON.parse(localStorage.getItem('history'));
-history.forEach(orders => {
-  console.log("5")
-  console.log(orders.Finalprice)
-  document.getElementById('p').innerHTML = `${orders.Finalprice}`
+adressbtn.addEventListener("click", () => {
+  if (address.style.display === "none") {
+    address.style.display = "flex";
+  } 
 });
 
+const cancel = document.getElementById("cancel");
+cancel.addEventListener('click', () => {
+  
+  address.style.display = "none";
+})
+
+  
+var grandTotal = function(arr) {
+  return arr.reduce((sum, item) => {
+    let qty = item.qty;
+let price = item.price * qty;
+    return sum + (price * qty)
+    
+  }, 0)
+};
+var grandQty = function(arr) {
+  return arr.reduce((sum, item) => {
+    let qty = item.qty;
+// let price =  qty;
+    return sum + (qty)
+    
+  }, 0)
+};
+
+
+ 
 // Function to update cart items on the page
 function updateCartItems() {
+  
   // Get the cart items element
   const cartItemsElement = document.getElementById('middlecart');
 
   // Get the cart data from local storage
   const cart = JSON.parse(localStorage.getItem('cart'));
+ 
  
   // Clear existing cart items on the page
   cartItemsElement.innerHTML = '';
@@ -309,24 +317,25 @@ function updateCartItems() {
     
     function Totalprice() {
       let totalPrice = 0;
-      cart.forEach(item => {
-        let qty = item.qty;
-        let price = item.price * qty;
-        totalPrice += price;
-      });
+      
+      // cart.forEach(item => {
+        
+      //   // totalPrice += price;
+        
+      // });
       const totalPriceElement = document.getElementById('total-price');
       const Shipprice = document.getElementById('ship-price');
       const Finalprice = document.getElementById('final-price');
-      var ship;
-      totalPriceElement.innerHTML = `$${totalPrice.toFixed(2)}`;
+      
+      totalPriceElement.innerHTML = `$${grandTotal(cart).toFixed(2)}`;
       if (totalPrice <= 50 ) {
         Shipprice.innerHTML = `$25`;
-        ship = 25 
+        // ship = 25 
       } else {
         Shipprice.innerHTML = `FREE`;
-        ship = 0
+        // ship = 0
       }
-      Finalprice.innerHTML = `$${totalPrice.toFixed(2) + ship}`;
+      Finalprice.innerHTML = `$${grandTotal(cart).toFixed(2)}`;
       
       
       
@@ -385,25 +394,57 @@ function updateCartItems() {
     
     
   });
-  const date = new Date();
+  const history = JSON.parse(localStorage.getItem('history'));
 
-let day = date.getDate();
-let month = date.getMonth() + 1;
-let year = date.getFullYear();
+// history.map(orders => {
+//   console.log(orders.Finalprice)
+//   console.log(orders.date)
+//   console.log(orders.qty)
+  
+//   const orderItems = document.getElementById('data')
+//   // const h1 = document.createElement('h1');
+//   // h1.innerHTML = `${orders.Finalprice}`
+  
+//     `<div >
+//     <h1>${orders.Finalprice}</h1>
+//     </div>`
+ 
+//   // orderItems.innerHTML =  `${orders.Finalprice}`
+//   // orderItems.appendChild(h1);
+// });
+const orderItems = document.getElementById('data')
+if (orderItems) {
+  orderItems.innerHTML = history.map(orders => 
+    `<div class="orderheading">
+    <h1>${orders.date}</h1>
+    <h1>$${orders.Finalprice}</h1>
+    <h1>${orders.qty}</h1>
+      
+    </div>`
+  ).join('');
+}
 
-// This arrangement can be altered based on how we want the date's format to appear.
-let currentDate = `${day}-${month}-${year}`;
 
   
-    const checkout = document.getElementById('checkout')
-      checkout.addEventListener("click", () => {
-        const p = document.getElementById('final-price').innerText
-        const historyEntry = { Finalprice: p, date: currentDate };
-        history.push(historyEntry)
-        localStorage.setItem('history', JSON.stringify(history));
-        
-        // localStorage.removeItem("cart");
-      })
+  const checkout = document.getElementById('placeorder')
+  
+  checkout.addEventListener("click", () => {
+    const date = new Date();
+
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear();
+    
+    // This arrangement can be altered based on how we want the date's format to appear.
+    let currentDate = `${day}-${month}-${year}`;
+    // const p = document.getElementById('final-price').innerText
+    const historyEntry = { Finalprice: grandTotal(cart).toFixed(2), date: currentDate , qty: grandQty(cart)};
+    history.push(historyEntry)
+    localStorage.setItem('history', JSON.stringify(history));
+    
+    localStorage.removeItem("cart");
+    address.style.display = "none";
+  })
 }
 
 
