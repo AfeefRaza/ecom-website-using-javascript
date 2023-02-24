@@ -173,12 +173,12 @@ const popup = document.getElementById("popup");
 popup.style.display = "none";
 const accountbtn = document.getElementById("account");
 
-
+if ("password" in localStorage) {
 accountbtn.addEventListener("click", () => {
   if (popup.style.display === "none") {
     popup.style.display = "flex";
   } 
-});
+});}
 const yespopup = document.getElementById("yes-popup");
 const nopopup = document.getElementById("no-popup");
 nopopup.addEventListener('click', () => {
@@ -318,11 +318,7 @@ function updateCartItems() {
     function Totalprice() {
       let totalPrice = 0;
       
-      // cart.forEach(item => {
-        
-      //   // totalPrice += price;
-        
-      // });
+     
       const totalPriceElement = document.getElementById('total-price');
       const Shipprice = document.getElementById('ship-price');
       const Finalprice = document.getElementById('final-price');
@@ -330,10 +326,10 @@ function updateCartItems() {
       totalPriceElement.innerHTML = `$${grandTotal(cart).toFixed(2)}`;
       if (totalPrice <= 50 ) {
         Shipprice.innerHTML = `$25`;
-        // ship = 25 
+       
       } else {
         Shipprice.innerHTML = `FREE`;
-        // ship = 0
+        
       }
       Finalprice.innerHTML = `$${grandTotal(cart).toFixed(2)}`;
       
