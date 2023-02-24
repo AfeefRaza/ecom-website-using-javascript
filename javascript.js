@@ -40,7 +40,7 @@
       `<div class="item">
         <img src=${I.image} alt="">
         <span>
-          <a href="/">
+          <a >
             <h1>${I.title}</h1>
             <h1> $ ${I.price}</h1>
           </a>
@@ -155,7 +155,7 @@ else{
   localStorage.setItem('username', username);
   localStorage.setItem('password', userpass);
   
-  window.location.href = "/"
+  window.location.href = "./index.html"
 }
 
    
@@ -392,22 +392,7 @@ function updateCartItems() {
   });
   const history = JSON.parse(localStorage.getItem('history'));
 
-// history.map(orders => {
-//   console.log(orders.Finalprice)
-//   console.log(orders.date)
-//   console.log(orders.qty)
-  
-//   const orderItems = document.getElementById('data')
-//   // const h1 = document.createElement('h1');
-//   // h1.innerHTML = `${orders.Finalprice}`
-  
-//     `<div >
-//     <h1>${orders.Finalprice}</h1>
-//     </div>`
- 
-//   // orderItems.innerHTML =  `${orders.Finalprice}`
-//   // orderItems.appendChild(h1);
-// });
+
 const orderItems = document.getElementById('data')
 if (orderItems) {
   orderItems.innerHTML = history.map(orders => 
