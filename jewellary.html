@@ -14,8 +14,10 @@
     </head>
     <body>
         <header>
+        
+
             <nav class='Navbar'>
-                <div class="logo" > <a href="/"> ShopCart </a></div>
+                <div class="logo" > <a href="./index.html"> ShopCart </a></div>
                 <div class="navitem navheading" id="nav">
                     <ul>
                         <li><a href="./electronics.html">Electronics </a></li>
@@ -30,9 +32,9 @@
                 </div>
                 <i class="fa-solid fa-magnifying-glass scope"></i>
                 <div class="right">
-                <div class="account navheading">
+                <div class="account navheading" id="account">
                     <i class="fa-regular fa-user"></i>
-                    <a>Account</a>
+                    <a href="./signup.html">Account</a>
                     
                 </div>
                 <div class="cart navheading" id="cartbtn" >
@@ -61,7 +63,8 @@
                         <li> <p>TOTAL: </p> <span id="final-price">$0</span> </li>
                     
                     </div>
-                    <button>CHECKOUT</button>
+                    <button id="checkout">CHECKOUT</button>
+                    <a href="./orderhistory.html">Order history</a>
             </div>
             
         </header>
@@ -70,9 +73,36 @@
                 <div class="popup">
                     <h1>Do you want to sign out</h1>
                     <span>
-                    <button> YES</button>
-                    <button>NO</button>
+                    <button id="yes-popup"> YES</button>
+                    <button id="no-popup">NO</button>
                 </span>
+                </div>
+            </div>
+            <div class="addresscontainer" id="address">
+                <div class="address">
+                    <h1>Please Fill your delivery information</h1>
+                    <span>
+                    <span>
+                        <h2>Name</h2>
+                        <input type="text" placeholder="Enter your name">
+                    </span>
+                    <span>
+                        <h2>Address</h2>
+                        <input type="text" placeholder="Enter your Address">
+                    </span>
+                    <span>
+                        <h2>Phone number</h2>
+                        <input type="text" placeholder="Enter your Phone number">
+                    </span>
+                    <span>
+                        <h2>Email</h2>
+                        <input type="text" placeholder="Enter your Email">
+                    </span>
+                </span>
+                <div>
+                    <button id="placeorder">Place order!</button>
+                    <button id="cancel">Cancel</button>
+                </div>
                 </div>
             </div>
             <div class="banner">
