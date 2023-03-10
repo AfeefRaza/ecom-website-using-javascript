@@ -45,7 +45,7 @@
             <h1> $ ${I.price}</h1>
           </a>
         </span>
-        <p> ${I.description.slice(0, 50)}...</p>
+        <p> ${I.description.slice(0, 35)}...</p>
         <p> ${I.rating.rate} <i class="fa-solid fa-star star"></i> (${I.rating.count})</p>
         <a  data-id=${I.id} data-img = ${I.image} data-qty = ${I.qty} data-name="${I.title}" data-price=${I.price} class="btn add-to-cart"> Add to Cart</a>
       </div>`
