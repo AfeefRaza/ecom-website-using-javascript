@@ -30,14 +30,15 @@
             </div>
             <i class="fa-solid fa-magnifying-glass scope"></i>
             <div class="right">
-            <div class="account navheading" id="account">
+            <div class="account navheading navicons" id="account">
                 <i class="fa-regular fa-user"></i>
                 <a href="./signup.html">Account</a>
                 
             </div>
-            <div class="cart navheading" id="cartbtn" >
+            <div class="cart navheading navicons" id="cartbtn" >
                 <i class="fa-solid fa-cart-shopping "></i>
                 <a>Cart</a>
+                <span class="cartnumber" id="cartnumber"></span>
             </div>
         </div>
         <div class="hamburger" id="hamburger">
@@ -67,6 +68,9 @@
         
     </header>
     <main>
+        <div class="orderplaced" id="orderplaced">
+            <p>Your Order has been placed, Checkout your order history from Cart menu</p>
+        </div>
         <div class="popupcontainer" id="popup">
             <div class="popup">
                 <h1>Do you want to sign out</h1>
@@ -79,24 +83,26 @@
         <div class="addresscontainer" id="address">
             <div class="address">
                 <h1>Please Fill your delivery information</h1>
-                <span>
+                <form>
+                    
                 <span>
                     <h2>Name</h2>
-                    <input type="text" placeholder="Enter your name">
+                    <input type="text" id="name" placeholder="Enter your name">
                 </span>
                 <span>
                     <h2>Address</h2>
-                    <input type="text" placeholder="Enter your Address">
+                    <input type="text" id="address" placeholder="Enter your Address">
                 </span>
                 <span>
                     <h2>Phone number</h2>
-                    <input type="text" placeholder="Enter your Phone number">
+                    <input type="tel" id="phone" placeholder="Enter your Phone number">
                 </span>
                 <span>
                     <h2>Email</h2>
-                    <input type="text" placeholder="Enter your Email">
+                    <input type="email" id="email" placeholder="Enter your Email">
                 </span>
-            </span>
+            </form>
+            <h5 id="fillout"></h5>
             <div>
                 <button id="placeorder">Place order!</button>
                 <button id="cancel">Cancel</button>

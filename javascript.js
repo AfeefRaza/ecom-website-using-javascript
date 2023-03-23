@@ -194,6 +194,7 @@ yespopup.addEventListener('click', () => {
 })
 
 
+
 // Add event listener to each button
 addToCartButtons.forEach(button => {
   button.addEventListener('click', () => {
@@ -228,6 +229,7 @@ addToCartButtons.forEach(button => {
       } else {
         //if the product doesnt exist in the cart push it in the cart
         cart.push({ id: productId, name: productName, price: productPrice, img: productImg, qty: parseInt(productqty) + 1 });
+        
       }
     }
     onAdd()
@@ -294,7 +296,10 @@ function updateCartItems() {
 
   // Loop through each item in the cart and display it
  
-  
+  let cartcount = cart.length
+  let cartnumber = document.getElementById('cartnumber')
+  cartnumber.innerHTML = cartcount
+   
   cart.forEach(item => {
    
     let qty = item.qty;
@@ -397,9 +402,30 @@ const orderItems = document.getElementById('data')
 if (orderItems) {
   orderItems.innerHTML = history.map(orders => 
     `<div class="orderheading">
-    <h1>${orders.date}</h1>
-    <h1>$${orders.Finalprice}</h1>
-    <h1>${orders.qty}</h1>
+    <h1>Order No# ${orders.ordernum}</h1>
+    <h2>${orders.date}</h2>
+    
+    
+    <div class="orderlist"> ${orders.cartitems.map(c => 
+      `
+      <div>
+      <img src="${c.img}"/>
+      <h5>${c.name}</h5>
+      <h5> QTY:${c.qty} </h5>
+      <h5> Price:${c.price} </h5>
+      </div>
+
+      
+      `
+      
+      
+      ).join('')
+    }
+    
+      </div>
+      <h4>TOTAL QTY:${orders.qty}</h4>
+      <h1>SUBTOTAL:$${orders.Finalprice}</h1>
+    
       
     </div>`
   ).join('');
@@ -410,7 +436,16 @@ if (orderItems) {
   const checkout = document.getElementById('placeorder')
   
   checkout.addEventListener("click", () => {
-    const date = new Date();
+    var fillout = document.getElementById("fillout");
+    var email = document.getElementById("email").value;
+    var phone = document.getElementById("phone").value;
+    var name = document.getElementById("name").value;
+    var address1 = document.getElementById("address").value;
+    if (email == "" || phone == "" || address1 == "" || name == "") {
+      fillout.innerText = "Please fill out all the fields"
+    }
+    else{
+      const date = new Date();
 
     let day = date.getDate();
     let month = date.getMonth() + 1;
@@ -418,13 +453,26 @@ if (orderItems) {
     
     // This arrangement can be altered based on how we want the date's format to appear.
     let currentDate = `${day}-${month}-${year}`;
+    const randomNumber = Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000;
     // const p = document.getElementById('final-price').innerText
-    const historyEntry = { Finalprice: grandTotal(cart).toFixed(2), date: currentDate , qty: grandQty(cart)};
+    const historyEntry = { Finalprice: grandTotal(cart).toFixed(2), cartitems: cart ,  date: currentDate , ordernum: randomNumber, qty: grandQty(cart)};
     history.push(historyEntry)
     localStorage.setItem('history', JSON.stringify(history));
     
     localStorage.removeItem("cart");
     address.style.display = "none";
+    const orderplaced = document.getElementById('orderplaced')
+    function OP() {
+      orderplaced.style.display = "flex"
+      setTimeout(() => {
+  
+      orderplaced.style.display = "none"
+      
+    
+  }, 4000);}
+  OP()
+    }
+    
   })
 }
 
@@ -455,6 +503,11 @@ function hideHam(element, excludedElement) {
 
 hideHam(hamenu, hamburger);
 
+
+
+
+
+ 
 
 
 
