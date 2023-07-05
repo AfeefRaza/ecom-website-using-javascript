@@ -424,6 +424,9 @@ if (orderItems) {
 
 //////checkout
 const address = document.getElementById("address");
+if (address) {
+  
+
 address.style.display = "none";
 const adressbtn = document.getElementById("checkout");
 
@@ -481,6 +484,7 @@ cancel.addEventListener('click', () => {
       
     })
   }
+}
   
 }
 
@@ -518,8 +522,9 @@ hideHam(hamenu, hamburger);
 const dropdownarr = document.getElementById('dropdownarr')
 const cartItemsElement = document.getElementById('middlecart');
 const arrdown = document.getElementById('downarr');
+if(dropdownarr){
 dropdownarr.addEventListener("click", () => {
-  if(dropdownarr){
+  
     if (cartItemsElement.style.display === "none") {
       cartItemsElement.style.display = "flex";
       arrdown.style.rotate = "180deg";
@@ -530,9 +535,9 @@ dropdownarr.addEventListener("click", () => {
       cartItemsElement.style.display = "none";
       arrdown.style.rotate = "0deg";
     }
-  }
+  
 
-})
+})}
 
 
 

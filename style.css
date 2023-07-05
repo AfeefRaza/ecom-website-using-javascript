@@ -288,7 +288,7 @@ body{
     
     
 }
-.bottomcart button{
+#checkout{
     margin-top: 2vh;
     width: 70%;
     height: 5vh;
@@ -299,6 +299,8 @@ body{
     color: var(--fourth);
     background-color: var(--secondary);
     cursor: pointer;
+    text-decoration: none;
+    text-align: center;
 }
 .bottomcart a {
     margin-top: 2vh;
@@ -306,7 +308,7 @@ body{
     color: var(--secondary);
     font-size: 1.5vw;
 }
-.bottomcart button:hover{
+#checkout:hover{
     border: 2px solid var(--secondary);
     color: var(--secondary);
     background-color: var(--third);
