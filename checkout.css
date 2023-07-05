@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;600&display=swap');
+
+body{
+    height: auto;
+    font-family: 'Poppins', sans-serif;
+}
+.Navbar {
+  position: relative;
+  
+}
+#fillout{
+  color: red;
+  text-align: center;
+  font-size: 2rem;
+}
+.checkout{
+    
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+    display: flex;
+    justify-content: space-around;
+    
+}
+.shipping-form-container {
+    width: 35vw;
+    height: 100vh;
+    
+    border: 0.1px solid rgb(216, 215, 215);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1.5rem;
+  }
+  .ship-form{
+    max-width: 30vw;
+    width: 30vw;
+  }
+  .ship-form h1{
+    color: var(--clr1);
+  }
+.same-line{
+    display: flex;
+    column-gap: 3vw;
+}
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 1vh;
+    font-size: 1.3rem;
+    color: var(--clr1);
+  }
+  .form-group input[type = 'text']{
+    border-radius: 0.5rem;
+    /* border: 1px solid var(--clr1); */
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    height: 3vh;
+    border: 0.1px solid rgb(216, 215, 215);
+    /* outline: 1px solid var(--clr1); */
+  }
+  .form-group input[type = 'text']:focus{
+    outline: 1px solid var(--clr1);
+  }
+  
+  
+  .check-btn button {
+    justify-self: flex-end;
+    background-color: var(--third);
+    box-shadow: -1px 1px 10px 2px var(--third);
+-webkit-box-shadow: -1px 1px 10px 2px var(--third);
+-moz-box-shadow: -1px 1px 10px 2px var(--third);
+    color: var(--primary);
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    height: 7vh;
+    font-size: 1.5rem;
+    border-radius: 1rem;
+    letter-spacing: 1.5px;
+    
+
+  }
+  .check-btn{
+    margin-top: 2vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif !important;
+    
+  }
+  .check-box{
+    display: flex;
+    align-items: center;
+    column-gap: 0.5vw;
+  }
+  .check-box input{
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+  .check-box label{
+    margin: 0;
+  }
+  .mid{
+    
+    border: 0.1px solid rgb(216, 215, 215);
+    border-radius: 1.5rem;
+    padding: 2rem;
+  }
+  .middlecart{
+    background-color: unset;
+    overflow-y: scroll;
+
+    
+}
+
+  
+  .infoproducts:first-child{
+    margin-top: 0 !important;
+  }
+  .infototal{
+    margin-bottom: 2vh;
+    padding: 2rem;
+    border: 0.1px solid rgb(216, 215, 215);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1.5rem;
+    font-size: 1.7rem;
+  }
+ .total-check{
+  width: 90%;
+  color: var(--clr1);
+  display: flex;
+  justify-content: space-between;
+ }
+ .dropdown{
+  display: none;
+ }
+ @media (max-width:600px)  {
+  .infoitems{
+    display: flex;
+    flex-direction: column;
+   align-items: center !important;
+   justify-content: center;
+   width: 90vw;
+    
+  }
+  .infocart{
+    width: 85vw;
+    padding: 3vw;
+  }
+  .checkout{
+    
+    width: 100vw;
+    display: flex;
+    justify-content: unset;
+    align-items: center !important;
+    flex-direction: column-reverse;
+    row-gap: 2vh;
+    
+}
+.infototal{
+  margin-bottom: 2vh;
+  width: 85vw;
+  padding: 3vw;
+  border: 0.1px solid rgb(216, 215, 215);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.5rem;
+  font-size: 1.2rem;
+}
+.check-btn button {
+  
+  width: 90%;
+  height: 7vh;
+  font-size: 1.3rem;
+  letter-spacing: 1.3px;
+  
+
+}
+.check-btn{
+  margin-top: 2vh;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif !important;
+  
+}
+.shipping-form-container {
+  width: 95vw;
+  /* height: 80vh; */
+  
+  border: 0.1px solid rgb(216, 215, 215);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.5rem;
+}
+.ship-form{
+  max-width: 85vw;
+  width: 85vw;
+}
+.same-line{
+  display: flex;
+  flex-direction: column;
+}
+.form-group input[type = 'text']{
+  border-radius: 0.5rem;
+  /* border: 1px solid var(--clr1); */
+  width: 90%;
+  padding: 8px;
+  font-size: 14px;
+  height: 3vh;
+  border: 0.1px solid rgb(216, 215, 215);
+  /* outline: 1px solid var(--clr1); */
+}
+.ship-form h1{
+  font-size: 1.8rem;
+}
+.form-group label {
+   
+  font-size: 1rem;
+}
+.mid{
+  width: 85%;
+}
+.middlecart{
+  height: auto;
+  width: 95%;
+}
+.middlecart div{
+  width: 100%;
+}
+.middlecart div div h1{
+  font-size: 1rem;
+}
+.middlecart div div h2{
+  font-size: 1.3rem;
+}
+.middlecart div div p{
+  font-size: 1rem;
+}
+
+.middlecart div div div button{
+  width: 10vw;
+  height: 4vh;
+  
+  border: 1px solid var(--third) ;
+  
+  border-radius: 0.8rem;
+  
+}
+.middlecart div div div button:hover{
+  background-color: var(--third);
+  border: 2px solid var(--fourth) ;
+  color:var(--fourth) ;
+  
+}
+.middlecart div img{
+  border-radius: 1rem;
+  height: 30vw;
+  width: 30vw;
+}
+.middlecart div div div {
+  width: 40vw;
+}
+.fa-circle-arrow-down{
+  rotate: 0deg;
+}
+.shipping-form-container {
+  
+  height: 111vh;
+  
+}
+.dropdown button{
+  background-color: transparent;
+  border: none;
+}
+
+.dropdown{
+  width: 100%;
+ display: flex !important;
+ color: var(--clr1);
+ align-items: center;
+ justify-content: space-between;
+ font-size: 1.5rem;
+ }
+ .cart-drop{
+  width: 100%;
+ }
+ .arrow-cart{
+  cursor: pointer;
+  transition: 0.1s linear;
+ }
+ }
+
+@media (min-width:600px) and (max-width: 1000px) {}
+ @media (min-width: 1000px) and (max-width: 1300px)  {
+  .ship-form h1{
+    font-size: 1.5rem;
+  }
+  .form-group label {
+   
+    font-size: 1rem;
+  }
+  .shipping-form-container{
+    height: 100vh;
+  }
+ }
+@media (min-width: 1300px) and (max-width: 1600px)  {
+  .form-group input[type="text"] {
+    border-radius: 0.8rem;
+  }
+  .shipping-form-container{
+    height: 120vh;
+  }
+}
+
+@media (min-width: 2560px) and (max-width: 3839px)  {
+  .shipping-form-container{
+    height: 120vh;
+  }
+  .form-group input[type="text"] {
+    border-radius: 1rem;
+  }
+  .form-group input[type="text"] {
+    font-size: 1.6rem;
+  }
+  .ship-form h1{
+    font-size: 2.5rem;
+  }
+  .form-group label {
+   
+    font-size: 2rem;
+    
+
+  }
+}
+@media (min-width: 3840px) {
+  .shipping-form-container{
+    height: 120vh;
+  }
+  
+  .ship-form h1{
+    font-size: 3rem;
+  }
+  .form-group label {
+   
+    font-size: 2.5rem;
+    
+
+  }
+  .form-group input[type="text"] {
+    font-size: 2rem;
+  }
+}

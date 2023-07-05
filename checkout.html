@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checkout</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="checkout.css">
+    <script src="https://kit.fontawesome.com/d9a6e0b5ab.js" crossorigin="anonymous"></script>
+</head>
+
+    <header>
+        
+
+        <nav class='Navbar'>
+            <div class="logo" > <a href="./index.html"> ShopCart </a></div>
+            <div class="navitem navheading" id="nav">
+                <ul>
+                    <li><a href="./electronics.html">Electronics </a></li>
+                    <li><a href="./jewellary.html"> Jewellery</a></li>
+                    <li><a href="./men.html">Men's clothing</a></li>
+                    <li><a href="./women.html">Women's clothing</a></li>
+                </ul>
+            </div>
+            <div class="searchbar">
+                <input type="text" placeholder="Search for products" >
+                
+            </div>
+            <i class="fa-solid fa-magnifying-glass scope"></i>
+            <div class="right">
+            <div class="account navheading navicons" id="account">
+                <i class="fa-regular fa-user"></i>
+                <a href="./signup.html">Account</a>
+                
+            </div>
+            
+        </div>
+        <div class="hamburger" id="hamburger">
+        <i class="fa-solid fa-bars"></i>   
+    </div> 
+        </nav>
+        
+        
+    </header>
+    <body>
+
+      <div class="addresscontainer" id="address">
+        <div class="address">
+            <h1>Do you want to place order?</h1>
+        
+        <div>
+            <button id="placeorder">Place order!</button>
+            <button id="cancel">Cancel</button>
+        </div>
+        </div>
+    </div>
+        <div class="popupcontainer" id="popup">
+            <div class="popup">
+                <h1>Do you want to sign out</h1>
+                <span>
+                <button id="yes-popup"> YES</button>
+                <button id="no-popup">NO</button>
+            </span>
+            </div>
+        </div>
+    <div class='checkout'>
+        <div class="shipping-form-container">
+       <div class='ship-form'>
+        <h5 id="fillout"></h5>
+       <h1>01.PERSONAL DETAILS</h1>
+         
+         <div class="form-group">
+             
+           <label htmlFor="name">Name:</label>
+           <input
+             type="text"
+             id="name"
+             placeholder="John"
+             
+             
+             
+           />
+           
+           
+         </div>
+         <div class="form-group">
+           <label htmlFor="phone">Phone Number:</label>
+           <input
+             type="text"
+             id="phone"
+             
+             
+             placeholder='555-123-4567'
+           />
+         </div>
+         <div class="form-group">
+           <label htmlFor="email">Email</label>
+           <input
+             type="text"
+             id="email"
+             
+             
+             placeholder='afeef@gmail.com'
+           />
+         </div>
+         <h1>02.SHIPPING DETAILS</h1>
+         
+         <div class="form-group">
+           <label htmlFor="address">Address:</label>
+           <input
+             type="text"
+             id="address"
+             
+             
+             placeholder='123 Oak Avenue, Springfield, California'
+           />
+         </div>
+         <div class="form-group">
+           <label htmlFor="extraAddress">Extra Address:</label>
+           <input
+             type="text"
+             id="extraAddress"
+             
+             
+             placeholder='Apartment, Suite etc'
+           />
+         </div>
+         
+         <h1>03.PAYMENT DETAILS</h1>
+         <div class="form-group">
+           
+           <label htmlFor="cardnumber">Card number</label>
+           <input
+             type="text"
+             id="cardnumber"
+             
+             
+             placeholder='4111 1111 1111 1111'
+           />
+         </div>
+         <div class="form-group same-line">
+             <span>
+           <label htmlFor="cvv">CVV</label>
+           <input
+             type="text"
+             id="cvv"
+             
+             
+             placeholder='123'
+           />
+           </span>
+           <span>
+           <label htmlFor="expiry">Expiry Date</label>
+           <input
+             type="text"
+             id="expiry"
+             
+             
+             placeholder='05/25'
+           />
+           </span>
+         </div>
+         
+         
+         
+         
+         
+       </div>
+     </div>
+       <div class="infoitems">
+       <div class="infototal">
+         
+                 
+         <div class="total total-check">
+           <h4>Items Total</h4>
+           <h4 id="total-price"></h4>
+         </div>
+         <div class="total total-check">
+           <h4>SHIPPING</h4>
+           <h4 id="ship-price"></h4>
+         </div>
+         <div class="total total-check">
+           <h4> <strong>SUBTOTAL</strong> </h4>
+           <h4 id="final-price"></h4>
+         </div>
+         <div class="check-btn">
+         <button type="submit" id="checkout" >PLACE ORDER!</button>
+         </div>
+         
+       
+   </div>
+         <div class="mid"  >
+           <div class="dropdown">
+             <h5>CART DETAILS</h5>
+             <button id="dropdownarr"><i class="fa-solid fa-circle-arrow-down" id="downarr"></i></button>
+           </div>
+           <span class="middlecart" id="middlecart">
+
+           </span>
+         
+         </div>
+         
+       </div>
+       </div>
+       <script  src="javascript.js" type="module"></script>
+</body>
+</html>

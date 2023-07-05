@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;600&display=swap');
+:root {
+    --primary : #ffff;
+    --secondary : #E3E0F3;
+    --third : #009063;
+    --fourth : #3B3B3B;
+    
+}
+.confirm{
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+
+}
+.heading{
+    display: flex;
+    align-items: center;
+    column-gap: 2vw;
+}
+.fa-circle-check{
+    color: rgb(167, 238, 167);
+        width: auto !important;
+        height: 6rem !important;
+        font-size: 6rem !important;
+        text-align: center !important;
+      
+}
+.confirm h1{
+    color: rgb(167, 238, 167);
+    font-size: 3rem;
+}
+.time{
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    color: rgb(109, 109, 109);
+    font-size: 2.5rem;
+
+}
+.time div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.time h3{
+    color: rgb(167, 238, 167);
+    font-size: 2rem;
+}
+.continueshopping{
+    margin-top: 2vh;
+    text-decoration: none;
+    justify-self: flex-end;
+    background-color: var(--third);
+    box-shadow: -1px 1px 10px 2px var(--third);
+-webkit-box-shadow: -1px 1px 10px 2px var(--third);
+-moz-box-shadow: -1px 1px 10px 2px var(--third);
+    color: var(--primary);
+    cursor: pointer;
+    border: none;
+    width: 20vw;
+    height: 7vh;
+    font-size: 1.5rem;
+    border-radius: 1rem;
+    letter-spacing: 1.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

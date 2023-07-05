@@ -244,22 +244,9 @@ addToCartButtons.forEach(button => {
 
 });
 
-const address = document.getElementById("address");
-address.style.display = "none";
-const adressbtn = document.getElementById("checkout");
 
 
-adressbtn.addEventListener("click", () => {
-  if (address.style.display === "none") {
-    address.style.display = "flex";
-  } 
-});
 
-const cancel = document.getElementById("cancel");
-cancel.addEventListener('click', () => {
-  
-  address.style.display = "none";
-})
 
   
 var grandTotal = function(arr) {
@@ -297,8 +284,12 @@ function updateCartItems() {
   // Loop through each item in the cart and display it
  
   let cartcount = cart.length
-  let cartnumber = document.getElementById('cartnumber')
-  cartnumber.innerHTML = cartcount
+  if (document.getElementById('cartnumber')) {
+    let cartnumber = document.getElementById('cartnumber')
+    cartnumber.innerHTML = cartcount
+  }
+  
+  
    
   cart.forEach(item => {
    
@@ -307,7 +298,7 @@ function updateCartItems() {
     let price = item.price*qty;
     const li = document.createElement('div');
 
-    li.innerHTML = `<img src=${item.img} alt=""> 
+    li.innerHTML = `<img  src=${item.img} alt=""> 
     <div>
     <h1>${item.name}</h1>
     <h2>$${price}</h2>
@@ -431,49 +422,66 @@ if (orderItems) {
   ).join('');
 }
 
+//////checkout
+const address = document.getElementById("address");
+address.style.display = "none";
+const adressbtn = document.getElementById("checkout");
 
+
+adressbtn.addEventListener("click", () => {
+  var fillout = document.getElementById("fillout");
+      var email = document.getElementById("email").value;
+      var phone = document.getElementById("phone").value;
+      var name = document.getElementById("name").value;
+      var address1 = document.getElementById("address").value;
+      if (email == "" || phone == "" || address1 == "" || name == "") {
+        fillout.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> 
+        Please fill out all the fields`
+      }
+      else{
+        if (address.style.display === "none") {
+          address.style.display = "flex";
+        } 
+      }
   
+});
+  const cancel = document.getElementById("cancel");
+cancel.addEventListener('click', () => {
+  
+  address.style.display = "none";
+})
   const checkout = document.getElementById('placeorder')
-  
-  checkout.addEventListener("click", () => {
-    var fillout = document.getElementById("fillout");
-    var email = document.getElementById("email").value;
-    var phone = document.getElementById("phone").value;
-    var name = document.getElementById("name").value;
-    var address1 = document.getElementById("address").value;
-    if (email == "" || phone == "" || address1 == "" || name == "") {
-      fillout.innerText = "Please fill out all the fields"
-    }
-    else{
+  if (checkout) {
+    
+    checkout.addEventListener("click", () => {
       const date = new Date();
-
-    let day = date.getDate();
-    let month = date.getMonth() + 1;
-    let year = date.getFullYear();
-    
-    // This arrangement can be altered based on how we want the date's format to appear.
-    let currentDate = `${day}-${month}-${year}`;
-    const randomNumber = Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000;
-    // const p = document.getElementById('final-price').innerText
-    const historyEntry = { Finalprice: grandTotal(cart).toFixed(2), cartitems: cart ,  date: currentDate , ordernum: randomNumber, qty: grandQty(cart)};
-    history.push(historyEntry)
-    localStorage.setItem('history', JSON.stringify(history));
-    
-    localStorage.removeItem("cart");
-    address.style.display = "none";
-    const orderplaced = document.getElementById('orderplaced')
-    function OP() {
-      orderplaced.style.display = "flex"
-      setTimeout(() => {
   
-      orderplaced.style.display = "none"
+      let day = date.getDate();
+      let month = date.getMonth() + 1;
+      let year = date.getFullYear();
       
-    
-  }, 4000);}
-  OP()
-    }
-    
-  })
+      // This arrangement can be altered based on how we want the date's format to appear.
+      let currentDate = `${day}-${month}-${year}`;
+      const randomNumber = Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000;
+      // const p = document.getElementById('final-price').innerText
+      const historyEntry = { Finalprice: grandTotal(cart).toFixed(2), cartitems: cart ,  date: currentDate , ordernum: randomNumber, qty: grandQty(cart)};
+      history.push(historyEntry)
+      localStorage.setItem('history', JSON.stringify(history));
+      
+      localStorage.removeItem("cart");
+      address.style.display = "none";
+      const orderplaced = document.getElementById('orderplaced')
+      function OP() {
+        setTimeout(() => {
+          window.location.href = './confirmation.html'
+        }, 1000);
+        
+        }
+    OP()
+      
+    })
+  }
+  
 }
 
 
@@ -502,6 +510,29 @@ function hideHam(element, excludedElement) {
 }
 
 hideHam(hamenu, hamburger);
+
+
+
+///cart details hide unhide in mobile function
+
+const dropdownarr = document.getElementById('dropdownarr')
+const cartItemsElement = document.getElementById('middlecart');
+const arrdown = document.getElementById('downarr');
+dropdownarr.addEventListener("click", () => {
+  if(dropdownarr){
+    if (cartItemsElement.style.display === "none") {
+      cartItemsElement.style.display = "flex";
+      arrdown.style.rotate = "180deg";
+      
+      
+    }
+    else{
+      cartItemsElement.style.display = "none";
+      arrdown.style.rotate = "0deg";
+    }
+  }
+
+})
 
 
 
