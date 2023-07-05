@@ -459,12 +459,14 @@ main{
 }
 .foryou{
     color: var(--fourth);
+    display: grid;
 }
 .foryouitems{
-    
+    max-width: 90vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    justify-self: center;
     
 }
 
@@ -573,7 +575,7 @@ main{
     font-weight: 300;
     /* margin-left: 2vw; */
     margin-bottom: 0;
-    cursor: pointer;
+    
     
 }
 .hamburger{
@@ -1097,18 +1099,18 @@ main{
         max-height: 20vh;
     }
 
-    .foryouitems{
-        
+    .foryouitems {
         display: grid;
-        grid-template-columns: max-content max-content max-content;
-        justify-content: center;
-        column-gap: 7vw;
+        grid-template-columns: max-content max-content;
+        justify-content: space-between;
+        
         row-gap: 1vh;
-    }
+        width: 90vw;
+      }
     
     .item{
-        width: 26vw;
-        height: 36vw;
+        width: 34vw;
+        height: 26vh;
         display: flex;
         flex-direction: column;
         /* align-content: space-around; */
@@ -1116,24 +1118,30 @@ main{
     }
 
     .item img{
-        width: 26vw;
-        height: 20vw;
+        width: 34vw;
+        height: 30vw;
         border-radius: 0.4rem;
     }
     .item span{
-        width: 26vw;
+        width: 32vw;
+        
+    }
+    .item span a{
+        display: flex;
+        flex-direction: column;
+justify-content: space-between;
     }
     .item h1{
-        font-size: 1.7vw;
+        font-size: 2.5vw;
     }
     .item p{
-        width: 26vw;
-        font-size: 1.1vw;
+        width: 32vw;
+        font-size: 1.5vw;
     }
     .btn{
         font-size: 2vw;
-        width: 13vw;
-        height: 2vh;
+        width: 20vw;
+        height: 3vh;
     }
    
     .row-1{

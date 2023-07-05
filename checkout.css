@@ -63,23 +63,23 @@ body{
     /* outline: 1px solid var(--clr1); */
   }
   .form-group input[type = 'text']:focus{
-    outline: 1px solid var(--clr1);
+    outline: 1px solid var(--fourth);
   }
   
   
   .check-btn button {
     justify-self: flex-end;
-    background-color: var(--third);
-    box-shadow: -1px 1px 10px 2px var(--third);
--webkit-box-shadow: -1px 1px 10px 2px var(--third);
--moz-box-shadow: -1px 1px 10px 2px var(--third);
-    color: var(--primary);
+    background-color: var(--third) !important;
+    box-shadow: -1px 1px 10px 2px var(--third) !important;
+-webkit-box-shadow: -1px 1px 10px 2px var(--third) !important;
+-moz-box-shadow: -1px 1px 10px 2px var(--third) !important;
+    color: var(--primary) !important;
     cursor: pointer;
-    border: none;
+    border: none !important;
     width: 100%;
-    height: 7vh;
+    height: 7vh !important;
     font-size: 1.5rem;
-    border-radius: 1rem;
+    border-radius: 1.5rem !important;
     letter-spacing: 1.5px;
     
 
