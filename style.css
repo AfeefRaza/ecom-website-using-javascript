@@ -12,6 +12,7 @@ body{
     --secondary : #E3E0F3;
     --third : #009063;
     --fourth : #3B3B3B;
+    --fifth: #c6cbb9;
     /* --primary : #ffff;
     --secondary : #f2f2f2;
     --third : #003d28;
@@ -756,16 +757,17 @@ main{
     display: none;
 }
 .address{
-    width: 70vw;
-    height: 50vh;
-    background-color: var(--fourth);
+    width: 50vw;
+    height: 30vh;
+    background-color: var(--fifth);
     border-radius: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     font-family: 'Poppins', sans-serif;
-    font-size: 1.5em;
+    font-size: 1em;
+    color: var(--fourth);
 }
 .address form{
     display: grid;
@@ -791,7 +793,7 @@ main{
     column-gap: 10vw;
 }
 .address div button{
-    width: 20vw;
+    width: 10vw;
     height: 7vh;
     border: none;
     background-color: var(--secondary);
@@ -800,6 +802,7 @@ main{
     border-radius: 1rem;
     font-size: 1em;
     cursor: pointer;
+    font-family: 'Poppins', sans-serif;
 }
 #fillout{
     color: var(--secondary);
@@ -809,7 +812,7 @@ main{
 }
 .address div button:first-child{
     background-color: var(--third);
-    color: var(--fourth);
+    color: var(--primary);
 
 }
 .address div button:first-child:hover{
