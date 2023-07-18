@@ -54,35 +54,35 @@
 
 
 // Show and hide cartmenu function
-const myDiv = document.getElementById("cartmenu");
-const myButton = document.getElementById("cartbtn");
-if (myButton) {
-myButton.addEventListener("click", () => {
-  if (myDiv.style.display === "none") {
-    myDiv.style.display = "block";
-  } else {
-    myDiv.style.display = "none";
-  }
-});}
-//Hide cartmenu when you click continue shopping
-const continueshopping = document.getElementById("conshop");
-if (continueshopping) {
-continueshopping.addEventListener("click", () => {
-  if (myDiv.style.display === "block") {
-    myDiv.style.display = "none";
-  }
-});}
-//Hide cartmenu when you click outside the cartmenu
-if (continueshopping) {
-function hideOnOutsideClick(element, excludedElement) {
-  document.addEventListener("click", (event) => {
-    if (!element.contains(event.target) && !excludedElement.contains(event.target)) {
-      element.style.display = "none";
-    }
-  });
-}
-hideOnOutsideClick(myDiv, myButton);
-}
+// const myDiv = document.getElementById("cartmenu");
+// const myButton = document.getElementById("cartbtn");
+// if (myButton) {
+// myButton.addEventListener("click", () => {
+//   if (myDiv.style.display === "none") {
+//     myDiv.style.display = "block";
+//   } else {
+//     myDiv.style.display = "none";
+//   }
+// });}
+// //Hide cartmenu when you click continue shopping
+// const continueshopping = document.getElementById("conshop");
+// if (continueshopping) {
+// continueshopping.addEventListener("click", () => {
+//   if (myDiv.style.display === "block") {
+//     myDiv.style.display = "none";
+//   }
+// });}
+// //Hide cartmenu when you click outside the cartmenu
+// if (continueshopping) {
+// function hideOnOutsideClick(element, excludedElement) {
+//   document.addEventListener("click", (event) => {
+//     if (!element.contains(event.target) && !excludedElement.contains(event.target)) {
+//       element.style.display = "none";
+//     }
+//   });
+// }
+// hideOnOutsideClick(myDiv, myButton);
+// }
 
 
     
@@ -163,7 +163,9 @@ else{
 
 console.log('afeef')
 if ("password" in localStorage) {
-  document.getElementById("account").innerHTML = localStorage.getItem('username')
+  const fullname = localStorage.getItem('username')
+  const first = fullname.split(' ')[0]
+  document.getElementById("account").innerHTML = `<i class="fa-regular fa-user"></i> ${first}` 
 }else{
   document.getElementById("account").innerHTML = `<i class="fa-regular fa-user"></i>
   <a href="./signup.html">Account</a>`

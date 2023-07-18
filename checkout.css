@@ -342,6 +342,7 @@ body{
     
 
   }
+  
 }
 @media (min-width: 3840px) {
   .shipping-form-container{
@@ -360,4 +361,5 @@ body{
   .form-group input[type="text"] {
     font-size: 2rem;
   }
+  
 }

@@ -555,7 +555,7 @@ main{
     margin-bottom: 3vh;
 }
 .row-1 h4{
-    font-family: 'Unbounded', cursive;
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
 }
 
@@ -563,6 +563,9 @@ main{
     margin: 0 3vw;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 10vw;
+    text-align: center;
    
 }
 .column a{
@@ -572,7 +575,7 @@ main{
 }
 .Bottom p{
     font-size: 1rem;
-    font-family: 'Unbounded', cursive;
+    font-family: 'Poppins', sans-serif;
     font-weight: 300;
     /* margin-left: 2vw; */
     margin-bottom: 0;
@@ -888,8 +891,8 @@ main{
     
     .logo {
         
-        width: 20vw;
-        font-size: 0.9em;
+        width: 18vw;
+        font-size: 0.8em;
     }
     .navheading ul li{
         width: fit-content;
@@ -897,13 +900,13 @@ main{
     
     }
     .searchbar{
-        width: 30vw;
+        width: 28vw;
     }
     .scope {
         font-size: 3vw;
     }
     .searchbar input{
-        width: 30vw;
+        width: 28vw;
         height: 2.5vh;
         border-radius: 20rem;
         padding-right: 5vw;
@@ -912,7 +915,7 @@ main{
     
     .right{
         padding-left: 6vw;
-        width: 30vw;
+        width: 35vw;
         display: flex;
         justify-content: unset;
         
@@ -933,6 +936,7 @@ main{
     }
     .account{
         margin-right: 3vw ;
+        /* width: 13vw; */
     }
     .navitem{
         padding: 0;
@@ -1849,6 +1853,23 @@ justify-content: space-between;
         max-width: 16vw;
         max-height: 50vh;
     }
+    .column{
+        width: 25vw;
+    }
+    .Bottom p{
+        font-size: 1.1rem;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 300;
+        /* margin-left: 2vw; */
+        margin-bottom: 0;
+        
+        
+    }
+    .row-1 h4 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
 }
 @media (min-width: 2560px) and (max-width: 3839px)  {
     .navheading{
@@ -1881,19 +1902,37 @@ justify-content: space-between;
         height: 50vh;
         
        font-size: 1.3vw;
+       border-radius: 4rem;
     }
     .image{
         width: 17vw;
         height: 50vh;
         max-width: 17vw;
         max-height: 50vh;
-        border-radius: 5rem;
+        border-radius: 4rem;
     }
     .cat img{
         width: 17vw;
         height: 50vh;
         max-width: 17vw;
         max-height: 50vh;
+    }
+    .column{
+        width: 30vw;
+    }
+    .Bottom p{
+        font-size: 1.5rem;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 300;
+        /* margin-left: 2vw; */
+        margin-bottom: 0;
+        
+        
+    }
+    .row-1 h4 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 2.5rem;
     }
 }
 @media (min-width: 3840px) {
@@ -1944,5 +1983,22 @@ justify-content: space-between;
         height: 50vh;
         max-width: 17vw;
         max-height: 50vh;
+    }
+    .column{
+        width: 30vw;
+    }
+    .Bottom p{
+        font-size: 2rem;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 300;
+        /* margin-left: 2vw; */
+        margin-bottom: 0;
+        
+        
+    }
+    .row-1 h4 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 3rem;
     }
 }
