@@ -192,6 +192,7 @@ yespopup.addEventListener('click', () => {
   localStorage.removeItem('password');
   localStorage.removeItem('username');
   popup.style.display = "none";
+  window.location.href = './'
 
 })
 

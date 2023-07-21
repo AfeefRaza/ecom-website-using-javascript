@@ -15,6 +15,9 @@ body{
     align-items: center;
     color: var(--fourth);
     font-family: 'Poppins', sans-serif;
+    box-shadow: -1px 1px 10px 2px var(--fifth) !important;
+    -webkit-box-shadow: -1px 1px 10px 2px var(--fifth) !important;
+    -moz-box-shadow: -1px 1px 10px 2px var(--fifth) !important;
 }
 .top{
     display: flex;
