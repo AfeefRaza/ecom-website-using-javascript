@@ -151,7 +151,10 @@ body{
     -webkit-box-shadow: 0 0 6px #e9e9eb;
     -moz-box-shadow: 0 0 5px #e9e9eb;
     box-shadow: 0 0 1px #e9e9eb;
+    padding-left: 0.5vw;
+    font-size: 0.8vw;
     padding-right: 1.5vw;
+    font-family: 'Poppins', sans-serif;
 }
 
 .right{
@@ -579,7 +582,7 @@ main{
     font-weight: 300;
     /* margin-left: 2vw; */
     margin-bottom: 0;
-    
+    text-align: center;
     
 }
 .hamburger{
@@ -802,8 +805,10 @@ main{
         width: 28vw;
         height: 2.5vh;
         border-radius: 20rem;
+        padding-left: 2vw;
         padding-right: 5vw;
         font-size: 0.5em;
+        
     }
     
     .right{
