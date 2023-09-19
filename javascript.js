@@ -38,6 +38,7 @@
     if (itemsElement) {
     document.getElementById('items').innerHTML = items.map(I => 
       `<div class="item">
+      
         <img src=${I.image} alt="">
         <span>
           <a >

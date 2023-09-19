@@ -64,13 +64,26 @@
             </div>
         </div>
     <div class='checkout'>
+      <div class="checkoutleft">
+        <div class="mid"  >
+          <div class="dropdown">
+            <h5>CART DETAILS</h5>
+            <button id="dropdownarr"><i class="fa-solid fa-circle-arrow-down" id="downarr"></i></button>
+          </div>
+          <span class="middlecart" id="middlecart">
+
+          </span>
+        
+        </div>
         <div class="shipping-form-container">
+          
        <div class='ship-form'>
+        
         <h5 id="fillout"></h5>
-       <h1>01.PERSONAL DETAILS</h1>
+       <h1>Delivery Information</h1>
          
-         <div class="form-group">
-             
+         <div class="form-group same-line">
+             <span>
            <label htmlFor="name">Name:</label>
            <input
              type="text"
@@ -80,10 +93,8 @@
              
              
            />
-           
-           
-         </div>
-         <div class="form-group">
+           </span>
+           <span>
            <label htmlFor="phone">Phone Number:</label>
            <input
              type="text"
@@ -92,6 +103,10 @@
              
              placeholder='555-123-4567'
            />
+           </span>
+         </div>
+         <div class="form-group">
+           
          </div>
          <div class="form-group">
            <label htmlFor="email">Email</label>
@@ -103,7 +118,7 @@
              placeholder='afeef@gmail.com'
            />
          </div>
-         <h1>02.SHIPPING DETAILS</h1>
+         
          
          <div class="form-group">
            <label htmlFor="address">Address:</label>
@@ -126,40 +141,7 @@
            />
          </div>
          
-         <h1>03.PAYMENT DETAILS</h1>
-         <div class="form-group">
-           
-           <label htmlFor="cardnumber">Card number</label>
-           <input
-             type="text"
-             id="cardnumber"
-             
-             
-             placeholder='4111 1111 1111 1111'
-           />
-         </div>
-         <div class="form-group same-line">
-             <span>
-           <label htmlFor="cvv">CVV</label>
-           <input
-             type="text"
-             id="cvv"
-             
-             
-             placeholder='123'
-           />
-           </span>
-           <span>
-           <label htmlFor="expiry">Expiry Date</label>
-           <input
-             type="text"
-             id="expiry"
-             
-             
-             placeholder='05/25'
-           />
-           </span>
-         </div>
+         
          
          
          
@@ -167,6 +149,7 @@
          
        </div>
      </div>
+    </div>
        <div class="infoitems">
        <div class="infototal">
          
@@ -189,17 +172,64 @@
          
        
    </div>
-         <div class="mid"  >
-           <div class="dropdown">
-             <h5>CART DETAILS</h5>
-             <button id="dropdownarr"><i class="fa-solid fa-circle-arrow-down" id="downarr"></i></button>
-           </div>
-           <span class="middlecart" id="middlecart">
-
-           </span>
-         
-         </div>
-         
+   <div class="payment">
+   <h1>Payment Details</h1>
+   <div class="form-group">
+     
+     <label htmlFor="email">Email</label>
+     <input
+       type="text"
+       id="email"
+       
+       
+       placeholder='afeefraza69@gmail.com'
+     />
+   </div>
+   <div class="form-group">
+     
+     <label htmlFor="cardname">Card Holder Name</label>
+     <input
+       type="text"
+       id="cardname"
+       
+       
+       placeholder='Afeef Raza Khan'
+     />
+   </div>
+   <div class="form-group">
+     
+     <label htmlFor="cardnumber">Card number</label>
+     <input
+       type="text"
+       id="cardnumber"
+       
+       
+       placeholder='4111 1111 1111 1111'
+     />
+   </div>
+   <div class="form-group same-line">
+       <span>
+     <label htmlFor="cvv">CVV</label>
+     <input
+       type="text"
+       id="cvv"
+       
+       
+       placeholder='123'
+     />
+     </span>
+     <span>
+     <label htmlFor="expiry">Expiry Date</label>
+     <input
+       type="text"
+       id="expiry"
+       
+       
+       placeholder='05/25'
+     />
+     </span>
+   </div>
+  </div>
        </div>
        </div>
        <script  src="javascript.js" type="module"></script>
