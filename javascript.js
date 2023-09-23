@@ -322,6 +322,7 @@ function updateCartItems() {
       const totalPriceElement = document.getElementById('total-price');
       const Shipprice = document.getElementById('ship-price');
       const Finalprice = document.getElementById('final-price');
+      const Checkoutbtn = document.getElementById('checkout');
       
       totalPriceElement.innerHTML = `$${grandTotal(cart).toFixed(2)}`;
       if (totalPrice <= 50 ) {
@@ -332,6 +333,7 @@ function updateCartItems() {
         
       }
       Finalprice.innerHTML = `$${grandTotal(cart).toFixed(2)}`;
+      Checkoutbtn.innerHTML = `Pay $${grandTotal(cart).toFixed(2)}`;
       
       
       
